@@ -9,7 +9,7 @@ set(:show_exceptions, false)
 
 # describe('the paths for bands and venues app', type: :feature) do
 #   describe('add venue functionality') do
-#     it('allow a user to add a band') do
+#     it('allow a user to add a venue') do
 #       visit('/')
 #       fill_in('name', with: 'plaza')
 #       click_button('Add')

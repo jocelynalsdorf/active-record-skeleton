@@ -33,13 +33,13 @@ ____________________________________________________________________
 (rake db:drop) if already connected to a db 
 rake db:create 
 
-rake db:create_migration NAME=create_questions 
+rake db:create_migration NAME=create_bands 
 ---make tables in migration files-----
-rake db:create_migration NAME=create_lists 
+rake db:create_migration NAME=create_venues 
 ---make tables in migration files-----
-rake db:create_migration NAME=add_four_choices_to_questions 
+rake db:create_migration NAME=create_bands_venues 
 ---make tables in migration files-----
-rake db:create_migration NAME=remove_correct_answer_from_questions 
+
 ---make tables in migration files-----
 rake db:create_migration NAME=results 
 ---make tables in migration files-----
@@ -67,6 +67,6 @@ then restart server!!
 
 to look at db, open psql
 
-> \c name_of_db_development
-> \d name_of_table
+> \c band_venue_development
+> \d bands
 

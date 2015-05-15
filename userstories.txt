@@ -13,9 +13,17 @@ Gems list:
 8.create views and routes
 9. validate presence and length:
 
+validates(:name, {:presence => true, :length => {:minimum => 2, :maximum => 50}})
 
 10.create callback in 1 class:
 
+before_save(:capitalize_title)
+
+
+private
+  define_method(:capitalize_title) do
+    self.title = title.capitalize()
+  end
 
 
 ____________________________________________________________________
@@ -37,11 +45,25 @@ rake db:create_migration NAME=results
 ---make tables in migration files-----
 rake db:create_migration NAME=add_surveyid_to_results 
 ---make tables in migration files-----
+******will need join table for many-to-many***************************
 
+class CreateCategoriesRecipesJoinTable < ActiveRecord::Migration
+  def change
+    create_table :categories_recipes, id: false do |t|
+      t.belongs_to :category, index: true
+      t.belongs_to :recipe, index: true
+    end
+  end
+end
+
+
+
+***************************************************************
 
 after all migrations run:
 rake db:migrate rake db:test:prepare
 
+then restart server!!
 
 to look at db, open psql
 

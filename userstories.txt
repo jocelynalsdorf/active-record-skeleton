@@ -1,0 +1,50 @@
+Set-up:
+
+Gems list:
+
+
+1. bundle install
+2. database.yml the correct db names; spec helper destroy loop names
+3. make lib class.rb
+4.make spec & integration specs for classes
+5. run rake db.create then proceed with migrations below:
+6. test ruby app.rb once index route up with layouts up
+7.test methods and integrations
+8.create views and routes
+9. validate presence and length:
+
+
+10.create callback in 1 class:
+
+
+
+____________________________________________________________________
+For cheatsheet:
+https://www.learnhowtoprogram.com/lessons/active-record-rake-migrations-weekend-homework
+____________________________________________________________________
+(rake db:drop) if already connected to a db 
+rake db:create 
+
+rake db:create_migration NAME=create_questions 
+---make tables in migration files-----
+rake db:create_migration NAME=create_lists 
+---make tables in migration files-----
+rake db:create_migration NAME=add_four_choices_to_questions 
+---make tables in migration files-----
+rake db:create_migration NAME=remove_correct_answer_from_questions 
+---make tables in migration files-----
+rake db:create_migration NAME=results 
+---make tables in migration files-----
+rake db:create_migration NAME=add_surveyid_to_results 
+---make tables in migration files-----
+
+
+after all migrations run:
+rake db:migrate rake db:test:prepare
+
+
+to look at db, open psql
+
+> \c name_of_db_development
+> \d name_of_table
+
